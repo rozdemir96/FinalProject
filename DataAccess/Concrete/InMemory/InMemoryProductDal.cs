@@ -5,6 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 
 namespace DataAccess.Concrete.InMemory
 {
@@ -82,6 +83,11 @@ namespace DataAccess.Concrete.InMemory
         public List<Product> GetByCategory(int categoryId)
         {
             return _products.Where(p => p.CategoryId == categoryId).ToList();//where; içindeki şarta uyan bütün elemanları yeni bir liste haline getirip döndürür.
+        }
+
+        public List<ProductDetailDto> getProductDetails()
+        {
+            throw new NotImplementedException();
         }
     }
 }
